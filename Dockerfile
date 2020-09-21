@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
 RUN pip install pika
 
-COPY readwrite.py /processor/
 COPY util/*.py /processor/util/
 
 ENTRYPOINT ["python", "/processor/python_processor.py", "$@", "--"]
