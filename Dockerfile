@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
 RUN pip install pika
 
-COPY util/*.py /processor/util/
+COPY . /processor
+WORKDIR /processor
 
 ENTRYPOINT ["python", "/processor/python_processor.py", "$@", "--"]
